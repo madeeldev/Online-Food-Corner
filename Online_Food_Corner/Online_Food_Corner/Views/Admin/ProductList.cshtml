@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Online_Food_Corner.Models.Product>
+
+@{
+    ViewBag.Title = "ProductList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="col-md-12">
+    <ol class="breadcrumb">
+        <li>
+            <a href="#">
+                <em class="fa fa-home"></em>
+            </a>
+        </li>
+        <li class="breadcrumb-item">Products</li>
+        <li class="breadcrumb-item">Product List</li>
+    </ol>
+</div>
+<h2>Product List</h2>
+<p>
+    @Html.ActionLink("Create New", "AddProduct")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.product_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.product_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.product_Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.product_picture)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.product_quantity)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.product_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.product_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.product_Price)
+        </td>
+        <td>@{
+                string imageBase64 = Convert.ToBase64String(item.product_picture);
+                string imageSrc = string.Format("data:image/gif;base64,{0}", imageBase64);
+
+            }
+            <img src="@imageSrc" width="100" height="100" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.product_quantity)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditProduct", new { id=item.product_id }) |
+            @Html.ActionLink("Details", "ProductDetails", new { id=item.product_id }) |
+            @Html.ActionLink("Delete", "ProductDelete", new { id=item.product_id })
+        </td>
+    </tr>
+}
+</table>
+<div>
+    <hr/>
+</div>

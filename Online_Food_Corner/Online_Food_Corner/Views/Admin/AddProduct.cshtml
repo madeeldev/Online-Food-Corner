@@ -1,0 +1,83 @@
+﻿@model Online_Food_Corner.Models.Product
+
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="col-md-12">
+    <ol class="breadcrumb">
+        <li>
+            <a href="#">
+                <em class="fa fa-home"></em>
+            </a>
+        </li>
+        <li class="breadcrumb-item">Products</li>
+        <li class="breadcrumb-item">Add Product</li>
+    </ol>
+</div>
+<h2>Add Product</h2>
+@using (Html.BeginForm("AddProduct", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h3>@ViewBag.Error</h3>
+        <hr/>
+        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+        <div class="form-group">
+            <label class="control-label col-md-2" for="product_name">Product Name</label>
+            <div class="col-md-6">
+                <input class="form-control text-box single-line" id="product_name" name="product_name" type="text" value="">
+                <span class="field-validation-valid text-danger" data-valmsg-for="product_name" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.product_type, htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.product_type, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.product_type, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.product_Price, htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.product_Price, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.product_Price, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.product_picture, htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-6">
+                <input class="btn btn-success form-control" style="padding-bottom: 35px" type="file" id="pImage" name="pImage" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.product_quantity, htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.product_quantity, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.product_quantity, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Add Product" class="btn btn-info" style="margin-left: 400px"/>
+            </div>
+        </div>
+    </div>
+    
+}
+<div>
+    @Html.ActionLink("Back to List", "ProductList")
+</div>
+
+<div>
+    <hr />
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

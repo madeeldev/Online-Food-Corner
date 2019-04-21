@@ -2208,6 +2208,8 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -2228,11 +2230,28 @@
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Shared\_AdminLayout.cshtml" />
-    <Content Include="Views\Admin\AdminDashboard.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Admin\ProductList.cshtml" />
+    <Content Include="Views\Admin\AddProduct.cshtml" />
+    <Content Include="Views\Admin\EditProduct.cshtml" />
+    <Content Include="Views\Admin\ProductDetails.cshtml" />
+    <Content Include="Views\Admin\ProductDelete.cshtml" />
+    <Content Include="Views\Admin\ProductListReadOnly.cshtml" />
+    <Content Include="Views\Admin\AddOrder.cshtml" />
+    <Content Include="Views\Admin\OrderList.cshtml" />
+    <Content Include="Views\Admin\Menu.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Shared\_UserLayout.cshtml" />
+    <Content Include="Views\Admin\AdminDashboard.cshtml" />
+    <Content Include="Views\Admin\UserDashboard.cshtml" />
+    <Content Include="Views\Shared\_Logout.cshtml" />
+    <Content Include="Views\Shared\_HomeLayout.cshtml" />
+    <Content Include="Views\Shared\_MenuLayout.cshtml" />
+    <Content Include="Views\Shared\_AboutLayout.cshtml" />
+    <Content Include="Views\Shared\_ContactLayout.cshtml" />
+    <Content Include="Views\Shared\_LoginLayout.cshtml" />
+    <Content Include="Views\Shared\_RegisterLayout.cshtml" />
+    <Content Include="Views\Shared\_ForgotPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

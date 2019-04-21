@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Online_Food_Corner.Models.Product>
+
+@{
+    ViewBag.Title = "ProductListReadOnly";
+}
+
+
+<h2>Product List</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.product_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.product_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.product_Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.product_picture)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.product_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.product_type)
+        </td>
+        <td>
+            @{
+                var a = (item.product_Price) / (item.product_quantity);
+            }
+            @Html.DisplayFor(modelItem => a)
+        </td>
+        <td>
+            @{
+                string imageBase64 = Convert.ToBase64String(item.product_picture);
+                string imageSrc = string.Format("data:image/gif;base64,{0}", imageBase64);
+            }
+            <img src="@imageSrc" width="100" height="100">
+        </td>
+        <td>
+            @Html.ActionLink("Order", "AddOrder", new { id = item.product_id })
+        </td>
+    </tr>
+                }
+
+</table>
