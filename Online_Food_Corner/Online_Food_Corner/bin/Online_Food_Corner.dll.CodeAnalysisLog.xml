@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 14.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="14.0">
+ <Targets>
+  <Target Name="C:\Users\User\Documents\Visual Studio 2015\Projects\Online_Food_Corner\Online_Food_Corner\bin\Online_Food_Corner.dll">
+   <Modules>
+    <Module Name="online_food_corner.dll">
+     <Namespaces>
+      <Namespace Name="Online_Food_Corner.Models">
+       <Types>
+        <Type Name="AspNetRole" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="ExcludedInSource" Created="2019-04-21 12:01:52Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\User\Documents\Visual Studio 2015\Projects\Online_Food_Corner\Online_Food_Corner\Models" File="AspNetRole.cs" Line="18">'AspNetRole.AspNetRole()' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;AspNetRole..ctor()&#xD;&#xA;AspNetRole.set_AspNetUsers(ICollection&lt;AspNetUser&gt;):Void</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#AspNetUsers" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="ExcludedInSource" Created="2019-04-21 12:01:52Z" FixCategory="Breaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="AspNetUser" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="ExcludedInSource" Created="2019-04-21 12:01:52Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\User\Documents\Visual Studio 2015\Projects\Online_Food_Corner\Online_Food_Corner\Models" File="AspNetUser.cs" Line="18">'AspNetUser.AspNetUser()' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;AspNetUser..ctor()&#xD;&#xA;AspNetUser.set_AspNetRoles(ICollection&lt;AspNetRole&gt;):Void</Issue>
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\User\Documents\Visual Studio 2015\Projects\Online_Food_Corner\Online_Food_Corner\Models" File="AspNetUser.cs" Line="18">'AspNetUser.AspNetUser()' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;AspNetUser..ctor()&#xD;&#xA;AspNetUser.set_AspNetUserClaims(ICollection&lt;AspNetUserClaim&gt;):Void</Issue>
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\User\Documents\Visual Studio 2015\Projects\Online_Food_Corner\Online_Food_Corner\Models" File="AspNetUser.cs" Line="18">'AspNetUser.AspNetUser()' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;AspNetUser..ctor()&#xD;&#xA;AspNetUser.set_AspNetUserLogins(ICollection&lt;AspNetUserLogin&gt;):Void</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#AspNetRoles" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="ExcludedInSource" Created="2019-04-21 12:01:52Z" FixCategory="Breaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+          <Member Name="#AspNetUserClaims" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="ExcludedInSource" Created="2019-04-21 12:01:52Z" FixCategory="Breaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+          <Member Name="#AspNetUserLogins" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="ExcludedInSource" Created="2019-04-21 12:01:52Z" FixCategory="Breaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Customer" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="ExcludedInSource" Created="2019-04-21 12:01:52Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\User\Documents\Visual Studio 2015\Projects\Online_Food_Corner\Online_Food_Corner\Models" File="Customer.cs" Line="18">'Customer.Customer()' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;Customer..ctor()&#xD;&#xA;Customer.set_Orders(ICollection&lt;Order&gt;):Void</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Orders" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="ExcludedInSource" Created="2019-04-21 12:01:52Z" FixCategory="Breaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Delivery" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="ExcludedInSource" Created="2019-04-21 12:01:52Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\User\Documents\Visual Studio 2015\Projects\Online_Food_Corner\Online_Food_Corner\Models" File="Delivery.cs" Line="18">'Delivery.Delivery()' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;Delivery..ctor()&#xD;&#xA;Delivery.set_Admins(ICollection&lt;Admin&gt;):Void</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Admins" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="ExcludedInSource" Created="2019-04-21 12:01:52Z" FixCategory="Breaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Order" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="ExcludedInSource" Created="2019-04-21 12:01:52Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\User\Documents\Visual Studio 2015\Projects\Online_Food_Corner\Online_Food_Corner\Models" File="Order.cs" Line="18">'Order.Order()' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;Order..ctor()&#xD;&#xA;Order.set_Admins(ICollection&lt;Admin&gt;):Void</Issue>
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\User\Documents\Visual Studio 2015\Projects\Online_Food_Corner\Online_Food_Corner\Models" File="Order.cs" Line="18">'Order.Order()' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;Order..ctor()&#xD;&#xA;Order.set_Customers(ICollection&lt;Customer&gt;):Void</Issue>
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\User\Documents\Visual Studio 2015\Projects\Online_Food_Corner\Online_Food_Corner\Models" File="Order.cs" Line="18">'Order.Order()' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;Order..ctor()&#xD;&#xA;Order.set_Deliveries(ICollection&lt;Delivery&gt;):Void</Issue>
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\User\Documents\Visual Studio 2015\Projects\Online_Food_Corner\Online_Food_Corner\Models" File="Order.cs" Line="18">'Order.Order()' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;Order..ctor()&#xD;&#xA;Order.set_Workers(ICollection&lt;Worker&gt;):Void</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Admins" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="ExcludedInSource" Created="2019-04-21 12:01:52Z" FixCategory="Breaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+          <Member Name="#Customers" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="ExcludedInSource" Created="2019-04-21 12:01:52Z" FixCategory="Breaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+          <Member Name="#Deliveries" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="ExcludedInSource" Created="2019-04-21 12:01:52Z" FixCategory="Breaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+          <Member Name="#Workers" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="ExcludedInSource" Created="2019-04-21 12:01:52Z" FixCategory="Breaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Product" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="ExcludedInSource" Created="2019-04-21 12:01:52Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\User\Documents\Visual Studio 2015\Projects\Online_Food_Corner\Online_Food_Corner\Models" File="Product.cs" Line="18">'Product.Product()' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;Product..ctor()&#xD;&#xA;Product.set_Admins(ICollection&lt;Admin&gt;):Void</Issue>
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\User\Documents\Visual Studio 2015\Projects\Online_Food_Corner\Online_Food_Corner\Models" File="Product.cs" Line="18">'Product.Product()' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;Product..ctor()&#xD;&#xA;Product.set_Customers(ICollection&lt;Customer&gt;):Void</Issue>
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\User\Documents\Visual Studio 2015\Projects\Online_Food_Corner\Online_Food_Corner\Models" File="Product.cs" Line="18">'Product.Product()' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;Product..ctor()&#xD;&#xA;Product.set_Orders(ICollection&lt;Order&gt;):Void</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Admins" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="ExcludedInSource" Created="2019-04-21 12:01:52Z" FixCategory="Breaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+          <Member Name="#Customers" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="ExcludedInSource" Created="2019-04-21 12:01:52Z" FixCategory="Breaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+          <Member Name="#Orders" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="ExcludedInSource" Created="2019-04-21 12:01:52Z" FixCategory="Breaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227">
+   <Name>Collection properties should be read only</Name>
+   <Description>Properties that return collections should be read-only so that users cannot entirely replace the backing store. Users can still modify the contents of the collection by calling relevant methods on the collection. Note that the XmlSerializer class has special support for deserializing read-only collections. See the XmlSerializer overview for more information.</Description>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182327.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="usagerules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214">
+   <Name>Do not call overridable methods in constructors</Name>
+   <Description>Virtual methods defined on the class should not be called from constructors. If a derived class has overridden the method, the derived class version will be called (before the derived class constructor is called).</Description>
+   <Resolution Name="Default">{0} contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: {1}</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182331.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalWarning</MessageLevel>
+   <File Name="usagerules.dll" Version="14.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>
