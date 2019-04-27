@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "ProductDetails";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Layout/_AdminLayout.cshtml";
 }
 <div class="col-md-12">
     <ol class="breadcrumb">
@@ -69,6 +69,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "EditProduct", new { id = Model.product_id }) |
+    @Html.ActionLink("Edit", "EditProduct", new { id = Model.id }) |
     @Html.ActionLink("Back to List", "ProductList")
 </p>

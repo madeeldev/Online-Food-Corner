@@ -5,14 +5,15 @@ namespace Online_Food_Corner.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Online_Food_Corner.Models.OnlineFoodCornerModelEntities>
+    internal sealed class Configuration : DbMigrationsConfiguration<Online_Food_Corner.Models.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "Online_Food_Corner.Models.ApplicationDbContext";
         }
 
-        protected override void Seed(Online_Food_Corner.Models.OnlineFoodCornerModelEntities context)
+        protected override void Seed(Online_Food_Corner.Models.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

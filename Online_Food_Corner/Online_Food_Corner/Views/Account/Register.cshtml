@@ -1,41 +1,37 @@
 ﻿@model Online_Food_Corner.Models.RegisterViewModel
 @{
     ViewBag.Title = "Register";
-    Layout = "~/Views/Shared/_RegisterLayout.cshtml";
+    Layout = "~/Views/Layout/_RegisterLayout.cshtml";
 }
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
     
     @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.DropDownListFor(model => model.UserRole, new SelectList(ViewBag.Roles, "Name", "Name"), "Select Role", new { @class = "form-control form-control-user" })
-        @Html.ValidationMessageFor(m => m.UserRole, "", new { @class = "text-danger" })
-    </div>
     <div class="form-group row">
         <div class="col-sm-6 mb-3 mb-sm-0">
 
-            @Html.TextBoxFor(m => m.FirstName, new {@placeholder = "First Name", id = "FirstName", @class = "form-control form-control-user"})
-            @Html.ValidationMessageFor(m => m.FirstName, "", new {@class = "text-danger"})
+            @Html.TextBoxFor(m => m.UserName, new {@placeholder = "UserName", id = "UserName", @class = "form-control form-control-user"})
+            @Html.ValidationMessageFor(m => m.UserName, "", new {@class = "text-danger"})
         </div>
         <div class="col-sm-6 mb-3">
-            @Html.TextBoxFor(m => m.LastName, new {@placeholder = "Last Name", id = "LastName", @class = "form-control form-control-user"})
-            @Html.ValidationMessageFor(m => m.LastName, "", new {@class = "text-danger"})
-        </div>
-    </div>
-    <div class="form-group row">
-        <div class="col-sm-6 mb-3 mb-sm-0">
-            @Html.TextBoxFor(m => m.UserName, new { @placeholder = "User Name", id = "UserName", @class = "form-control form-control-user" })
-            @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
-        </div>
-        <div class="col-sm-6 mb-3">
-            @Html.TextBoxFor(m => m.PhoneNumber, new { @placeholder = "Phone Number", id = "Phone Number", @class = "form-control form-control-user" })
-            @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { @class = "text-danger" })
+            @Html.TextBoxFor(m => m.FullName, new {@placeholder = "Full Name", id = "FullName", @class = "form-control form-control-user"})
+            @Html.ValidationMessageFor(m => m.FullName, "", new {@class = "text-danger"})
         </div>
     </div>
     <div class="form-group">
         @Html.TextBoxFor(m => m.Email, new { @placeholder = "Email", id = "email", @class = "form-control form-control-user" })
         @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            @Html.TextBoxFor(m => m.Address, new { @placeholder = "Address", id = "Address", @class = "form-control form-control-user" })
+            @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-sm-6 mb-3">
+            @Html.TextBoxFor(m => m.CellNumber, new { @placeholder = "Phone Number", id = "Phone Number", @class = "form-control form-control-user" })
+            @Html.ValidationMessageFor(m => m.CellNumber, "", new { @class = "text-danger" })
+        </div>
     </div>
     <div class="form-group row">
         <div class="col-sm-6 mb-3 mb-sm-0">

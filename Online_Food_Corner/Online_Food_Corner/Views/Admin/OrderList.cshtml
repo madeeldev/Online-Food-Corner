@@ -6,9 +6,6 @@
 
 <h2>OrderList</h2>
 
-<p>
-    @Html.ActionLink("Create New", "AddOrder")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -53,9 +50,9 @@
             @Html.DisplayFor(modelItem => item.Product.product_name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.order_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.order_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.order_id })
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
         </td>
     </tr>
 }

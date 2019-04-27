@@ -13,11 +13,11 @@ namespace Online_Food_Corner.Controllers
 {
     public class AdminController : Controller
     {
-        private OnlineFoodCornerModelEntities db;
+        private ApplicationDbContext db;
         //Constructor
         public AdminController()
         {
-            db = new OnlineFoodCornerModelEntities();
+            db = new ApplicationDbContext();
         }
 
         //Destructor
@@ -33,12 +33,6 @@ namespace Online_Food_Corner.Controllers
             return View();
         }
 
-        //User Dashboard
-        public ActionResult UserDashboard()
-        {
-            var products = db.Products.ToList();
-            return View(products);
-        }
         //Menu
         public ActionResult Menu()
         {
@@ -79,14 +73,14 @@ namespace Online_Food_Corner.Controllers
         //Edit Product
         public ActionResult EditProduct(int id)
         {
-            var model = db.Products.SingleOrDefault(x => x.product_id == id);
+            var model = db.Products.SingleOrDefault(x => x.id == id);
             return View(model);
         }
 
         [HttpPost]
         public ActionResult EditProduct(int id, Product model, HttpPostedFileBase pImage)
         {
-            var product = db.Products.Single(x => x.product_id == id);
+            var product = db.Products.Single(x => x.id == id);
             if (pImage != null && pImage.ContentLength > 0)
             {
                 model.product_picture = new byte[pImage.ContentLength];
@@ -104,31 +98,23 @@ namespace Online_Food_Corner.Controllers
         // Product Details
         public ActionResult ProductDetails(int id)
         {
-            var product = db.Products.SingleOrDefault(x => x.product_id == id);
+            var product = db.Products.SingleOrDefault(x => x.id == id);
             return View(product);
         }
 
         //Delete Product
         public ActionResult ProductDelete(int? id)
         {
-            var product = db.Products.Single(x => x.product_id == id);
+            var product = db.Products.Single(x => x.id == id);
             return View(product);
         }
         [HttpPost, ActionName("ProductDelete")]
         public ActionResult ProductDelete(int id)
         {
-            var product = db.Products.SingleOrDefault(x => x.product_id == id);
+            var product = db.Products.SingleOrDefault(x => x.id == id);
             db.Products.Remove(product);
             db.SaveChanges();
             return RedirectToAction("ProductList");
-        }
-
-
-        //Product Work For User
-        public ActionResult ProductListReadOnly()
-        {
-            List<Product> products = db.Products.ToList();
-            return View(products);
         }
 
         //Order List
@@ -137,24 +123,71 @@ namespace Online_Food_Corner.Controllers
             var order = db.Orders.ToList();
             return View(order);
         }
-        //Add Order
-        public ActionResult AddOrder(int id)
+
+        //Create Chef
+        public ActionResult CreateEmployee()
         {
+
             return View();
         }
 
         [HttpPost]
-        public ActionResult AddOrder(int id, Order model)
+        public ActionResult CreateEmployee(Worker model)
         {
-            var product = db.Products.SingleOrDefault(x => x.product_id == id);
-            model.product_id = id;
-            //model.customer_id = User.Identity.GetUserId();
-            model.timing = DateTime.Now;
-            model.order_date = DateTime.Now;
-            model.total_price = 100;
-            db.Orders.Add(model);
+            db.Workers.Add(model);
             db.SaveChanges();
+            return RedirectToAction("EmployeeList");
+        }
+        //Employee List
+        public ActionResult EmployeeList()
+        {
+            var employee = db.Workers.ToList();
+            return View(employee);
+        }
+        //Edit Employee
+        public ActionResult EditEmployee(int id)
+        {
+            var model = db.Workers.SingleOrDefault(x => x.id == id);
             return View(model);
+        } 
+        [HttpPost]
+        public ActionResult EditEmployee(int id, Worker model)
+        {
+            var worker = db.Workers.Single(x => x.id == id);
+            
+            worker.worker_name = model.worker_name;
+            worker.worker_status = model.worker_status;
+            worker.salary = model.salary;
+            db.SaveChanges();
+            db.Workers.Add(model);
+            return RedirectToAction("EmployeeList");
+        }
+
+        //Delete Employee
+        public ActionResult DeleteEmployee(int? id)
+        {
+            var worker = db.Workers.Single(x => x.id == id);
+            return View(worker);
+        }
+        [HttpPost, ActionName("DeleteEmployee")]
+        public ActionResult DeleteEmployee(int id)
+        {
+            var worker = db.Workers.SingleOrDefault(x => x.id == id);
+            db.Workers.Remove(worker);
+            db.SaveChanges();
+            return RedirectToAction("EmployeeList");
+        }
+        //Employee Details
+        public ActionResult EmployeeDetails(int id)
+        {
+            var worker = db.Workers.SingleOrDefault(x => x.id == id);
+            return View(worker);
+        }
+
+        //Send Order
+        public ActionResult SendOrder(int id)
+        {
+            return View();
         }
     }
 }

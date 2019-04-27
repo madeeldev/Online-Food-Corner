@@ -1,0 +1,42 @@
+﻿@model Online_Food_Corner.Models.Worker
+
+@{
+    ViewBag.Title = "Employee Details";
+    ViewBag.Main = "Employee";
+    Layout = "~/Views/Layout/_AdminLayout.cshtml";
+}
+
+
+<div>
+ 
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.worker_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.worker_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.salary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.salary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.worker_status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.worker_status)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditEmployee", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "EmployeeList")
+</p>

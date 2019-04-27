@@ -1,21 +1,11 @@
 ﻿@model Online_Food_Corner.Models.Product
 
 @{
-    ViewBag.Title = "ProductDelete";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Product Delete";
+    ViewBag.Main = "Product";
+    Layout = "~/Views/Layout/_AdminLayout.cshtml";
 }
-<div class="col-md-12">
-    <ol class="breadcrumb">
-        <li>
-            <a href="#">
-                <em class="fa fa-home"></em>
-            </a>
-        </li>
-        <li class="breadcrumb-item">Products</li>
-        <li class="breadcrumb-item">Delete Product</li>
-    </ol>
-</div>
-<h2>ProductDelete</h2>
+
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
@@ -73,7 +63,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <input type="submit" value="Delete" class="btn btn-info" /> |
             @Html.ActionLink("Back to List", "ProductList")
         </div>
     }

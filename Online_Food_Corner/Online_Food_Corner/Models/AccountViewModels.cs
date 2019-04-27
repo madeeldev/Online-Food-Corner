@@ -48,10 +48,11 @@ namespace Online_Food_Corner.Models
 
     public class LoginViewModel
     {
+        /*[Required]
+        [Display(Name = "UserName")]
+        public string UserName { get; set; }*/
+
         [Required]
-        [Display(Name = "User Name")]
-        public string UserName { get; set; }
-        //[Required]
         [Display(Name = "Email")]
         [EmailAddress]
         public string Email { get; set; }
@@ -68,26 +69,23 @@ namespace Online_Food_Corner.Models
     public class RegisterViewModel
     {
         [Required]
-        [Display(Name = "User Name")]
+        [Display(Name = "UserName")]
         public string UserName { get; set; }
+
         [Required]
-        [Display(Name = "User Role")]
-        public string UserRole { get; set; }
+        [Display(Name = "FullName")]
+        public string FullName { get; set; }
         [Required]
-        [Display(Name = "First Name")]
-        public string FirstName { get; set; }
+        [Display(Name = "Address")]
+        public string Address { get; set; }
         [Required]
-        [Display(Name = "Last Name")]
-        public string LastName { get; set; }
+        [Display(Name = "Phone Number")]
+        public string CellNumber { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
-        [Required]
-        [DataType(DataType.PhoneNumber)]
-        [RegularExpression(@"^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$", ErrorMessage = "Not a valid phone number")]
-        [Display(Name = "Phone Number")]
-        public string PhoneNumber { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]

@@ -2,7 +2,7 @@
 @model LoginViewModel
 @{
     ViewBag.Title = "Log in";
-    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+    Layout = "~/Views/Layout/_LoginLayout.cshtml";
     /*Layout = "~/views/shared/_Layout.cshtml";*/
 
 }
@@ -15,8 +15,8 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.TextBoxFor(m => m.UserName, new { @placeholder = "User Name", id = "UserName", @class = "form-control form-control-user" })
-            @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+            @Html.TextBoxFor(m => m.Email, new { @placeholder = "Email", id = "Email", @class = "form-control form-control-user" })
+            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
 
         </div>
         <div class="form-group">

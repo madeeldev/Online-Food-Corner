@@ -1,26 +1,15 @@
 ﻿@model IEnumerable<Online_Food_Corner.Models.Product>
 
 @{
-    ViewBag.Title = "ProductList";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Product List";
+    ViewBag.Main = "Product";
+    Layout = "~/Views/Layout/_AdminListLayout.cshtml";
 }
-<div class="col-md-12">
-    <ol class="breadcrumb">
-        <li>
-            <a href="#">
-                <em class="fa fa-home"></em>
-            </a>
-        </li>
-        <li class="breadcrumb-item">Products</li>
-        <li class="breadcrumb-item">Product List</li>
-    </ol>
-</div>
-<h2>Product List</h2>
 <p>
     @Html.ActionLink("Create New", "AddProduct")
 </p>
 <table class="table">
-    <tr>
+    @*<tr>
         <th>
             @Html.DisplayNameFor(model => model.product_name)
         </th>
@@ -37,33 +26,48 @@
             @Html.DisplayNameFor(model => model.product_quantity)
         </th>
         <th></th>
-    </tr>
+    </tr>*@
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.product_name)
+            <div style="margin-top: 100px; margin-left: 10px">
+                @Html.DisplayFor(modelItem => item.product_name)
+            </div>
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.product_type)
+            <div style="margin-top: 100px; margin-left: 100px">
+                @Html.DisplayFor(modelItem => item.product_type)
+            </div>
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.product_Price)
+            <div style="margin-top: 100px; margin-left: 100px">
+                @{
+                    var a = (item.product_Price) / (item.product_quantity);
+                }
+                @Html.DisplayFor(modelItem => a)
+            </div>
         </td>
-        <td>@{
+        <td>
+            @{
                 string imageBase64 = Convert.ToBase64String(item.product_picture);
                 string imageSrc = string.Format("data:image/gif;base64,{0}", imageBase64);
-
             }
-            <img src="@imageSrc" width="100" height="100" />
+            <div class="col-md-4 col-sm-6" style="margin-left: 140px">
+                <div class="single-food mt-5">
+                    <div class="food-img">
+                        <img src="@imageSrc" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
         </td>
+        
         <td>
-            @Html.DisplayFor(modelItem => item.product_quantity)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "EditProduct", new { id=item.product_id }) |
-            @Html.ActionLink("Details", "ProductDetails", new { id=item.product_id }) |
-            @Html.ActionLink("Delete", "ProductDelete", new { id=item.product_id })
+            <div class="row" style="margin-left: -220px;margin-top: 100px ">
+                <div class="col-md-2" style="margin-right: 10px">@Html.ActionLink("Edit", "EditProduct", new { id=item.id })</div> |
+                <div class="col-md-3" style="margin-right: 10px">@Html.ActionLink("Details", "ProductDetails", new { id=item.id })</div> |
+                <div class="col-md-3" style="margin-right: 10px">@Html.ActionLink("Delete", "ProductDelete", new { id=item.id })</div>
+            </div>
         </td>
     </tr>
 }

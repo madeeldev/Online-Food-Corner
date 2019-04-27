@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Online_Food_Corner.Models.Product>
+
+@{
+    ViewBag.Title = "Products";
+    ViewBag.Title = "Product List";
+    Layout = "~/Views/Layout/_UserListLayout.cshtml";
+}
+
+@{
+    var counter = 0;
+    foreach (var item in Model)
+    {
+        counter++;
+    }
+    ViewBag.CounterP = counter;
+}
+<table class="table">
+    @*<tr>
+        <th>
+            <div style="">
+            @Html.DisplayNameFor(model => model.product_name)
+            </div>
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.product_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.product_Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.product_picture)
+        </th>
+        <th></th>
+    </tr>*@
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                <div style="margin-top: 100px; margin-left: 10px">
+                @Html.DisplayFor(modelItem => item.product_name)
+                </div>
+            </td>
+            <td>
+                <div style="margin-top: 100px; margin-left: 100px">
+                    @Html.DisplayFor(modelItem => item.product_type)
+                </div>
+            </td>
+            <td>
+                <div style="margin-top: 100px; margin-left: 100px">
+                    @{
+                        var a = (item.product_Price) / (item.product_quantity);
+                    }
+                    @Html.DisplayFor(modelItem => a)
+                </div>
+            </td>
+            <td>
+                @{
+                    string imageBase64 = Convert.ToBase64String(item.product_picture);
+                    string imageSrc = string.Format("data:image/gif;base64,{0}", imageBase64);
+                }
+                <div class="col-md-4 col-sm-6" style="margin-left: 140px">
+                    <div class="single-food mt-5">
+                        <div class="food-img">
+                            <img src="@imageSrc" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div style="margin-top: 110px; margin-left: -150px">
+                    @Html.ActionLink("Order Now", "MakeOrder", new { id = item.id })
+                </div>
+            </td>
+        </tr>
+    }
+
+</table>

@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{21625A61-18B3-4F87-88ED-55EF2456813A}</ProjectGuid>
+    <ProjectGuid>{C2CBC280-D56A-4095-A8BA-47B6B749850F}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -34,7 +34,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -81,8 +80,6 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -200,72 +197,106 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904241023074_InitialCreate.cs" />
+    <Compile Include="Migrations\201904241023074_InitialCreate.Designer.cs">
+      <DependentUpon>201904241023074_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904241257072_InitialModel.cs" />
+    <Compile Include="Migrations\201904241257072_InitialModel.Designer.cs">
+      <DependentUpon>201904241257072_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904251229267_AddAddressTOApplicationUser.cs" />
+    <Compile Include="Migrations\201904251229267_AddAddressTOApplicationUser.Designer.cs">
+      <DependentUpon>201904251229267_AddAddressTOApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904251231253_AddCellNumberToApplicationUserClass.cs" />
+    <Compile Include="Migrations\201904251231253_AddCellNumberToApplicationUserClass.Designer.cs">
+      <DependentUpon>201904251231253_AddCellNumberToApplicationUserClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904251307177_SeedUsers.cs" />
+    <Compile Include="Migrations\201904251307177_SeedUsers.Designer.cs">
+      <DependentUpon>201904251307177_SeedUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904251633556_AddCustomerInDb.cs" />
+    <Compile Include="Migrations\201904251633556_AddCustomerInDb.Designer.cs">
+      <DependentUpon>201904251633556_AddCustomerInDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904251643064_AddOrder.cs" />
+    <Compile Include="Migrations\201904251643064_AddOrder.Designer.cs">
+      <DependentUpon>201904251643064_AddOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904251650519_AddProduct.cs" />
+    <Compile Include="Migrations\201904251650519_AddProduct.Designer.cs">
+      <DependentUpon>201904251650519_AddProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904251659451_AddCustomerInDb1.cs" />
+    <Compile Include="Migrations\201904251659451_AddCustomerInDb1.Designer.cs">
+      <DependentUpon>201904251659451_AddCustomerInDb1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904251701287_AddOrder1.cs" />
+    <Compile Include="Migrations\201904251701287_AddOrder1.Designer.cs">
+      <DependentUpon>201904251701287_AddOrder1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904251704581_AddDelivery.cs" />
+    <Compile Include="Migrations\201904251704581_AddDelivery.Designer.cs">
+      <DependentUpon>201904251704581_AddDelivery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904251706526_AddOrder2.cs" />
+    <Compile Include="Migrations\201904251706526_AddOrder2.Designer.cs">
+      <DependentUpon>201904251706526_AddOrder2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904251708194_AddProduct1.cs" />
+    <Compile Include="Migrations\201904251708194_AddProduct1.Designer.cs">
+      <DependentUpon>201904251708194_AddProduct1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904251713017_AddWorker.cs" />
+    <Compile Include="Migrations\201904251713017_AddWorker.Designer.cs">
+      <DependentUpon>201904251713017_AddWorker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904251714559_AddDelivery1.cs" />
+    <Compile Include="Migrations\201904251714559_AddDelivery1.Designer.cs">
+      <DependentUpon>201904251714559_AddDelivery1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904251834243_Setting.cs" />
+    <Compile Include="Migrations\201904251834243_Setting.Designer.cs">
+      <DependentUpon>201904251834243_Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904251907053_UpdateCustomerClass.cs" />
+    <Compile Include="Migrations\201904251907053_UpdateCustomerClass.Designer.cs">
+      <DependentUpon>201904251907053_UpdateCustomerClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904252031068_AddApplicationUserId.cs" />
+    <Compile Include="Migrations\201904252031068_AddApplicationUserId.Designer.cs">
+      <DependentUpon>201904252031068_AddApplicationUserId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904252047240_AddQuanityInOrders.cs" />
+    <Compile Include="Migrations\201904252047240_AddQuanityInOrders.Designer.cs">
+      <DependentUpon>201904252047240_AddQuanityInOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904271027407_balance.cs" />
+    <Compile Include="Migrations\201904271027407_balance.Designer.cs">
+      <DependentUpon>201904271027407_balance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904271045205_AddOrderToWorker.cs" />
+    <Compile Include="Migrations\201904271045205_AddOrderToWorker.Designer.cs">
+      <DependentUpon>201904271045205_AddOrderToWorker.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Admin.cs">
-      <DependentUpon>OnlineFoodCornerModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ApplicationRoleManager.cs" />
-    <Compile Include="Models\AspNetRole.cs">
-      <DependentUpon>OnlineFoodCornerModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetUser.cs">
-      <DependentUpon>OnlineFoodCornerModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetUserClaim.cs">
-      <DependentUpon>OnlineFoodCornerModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetUserLogin.cs">
-      <DependentUpon>OnlineFoodCornerModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Customer.cs">
-      <DependentUpon>OnlineFoodCornerModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CustomerViewModel.cs" />
-    <Compile Include="Models\C__MigrationHistory.cs">
-      <DependentUpon>OnlineFoodCornerModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Delivery.cs">
-      <DependentUpon>OnlineFoodCornerModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DeliveryViewModel.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Delivery.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\OnlineFoodCornerModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OnlineFoodCornerModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\OnlineFoodCornerModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OnlineFoodCornerModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\OnlineFoodCornerModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OnlineFoodCornerModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Order.cs">
-      <DependentUpon>OnlineFoodCornerModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\OrderViewModel.cs" />
-    <Compile Include="Models\Product.cs">
-      <DependentUpon>OnlineFoodCornerModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProductViewModel.cs" />
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>OnlineFoodCornerModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Worker.cs">
-      <DependentUpon>OnlineFoodCornerModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\WorkersViewModel.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\RoleName.cs" />
+    <Compile Include="Models\Worker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -374,6 +405,7 @@
     <Content Include="Content\img\noun_User_17237_000000.png" />
     <Content Include="Content\img\noun_User_17239_000000.png" />
     <Content Include="Content\img\noun_User_17240_000000.png" />
+    <Content Include="Content\img\undraw_posting_photo.svg" />
     <Content Include="Content\js\demo\chart-area-demo.js" />
     <Content Include="Content\js\demo\chart-bar-demo.js" />
     <Content Include="Content\js\demo\chart-pie-demo.js" />
@@ -1954,16 +1986,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\OnlineFoodCornerModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>OnlineFoodCornerModel.edmx</DependentUpon>
-      <LastGenOutput>OnlineFoodCornerModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\OnlineFoodCornerModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>OnlineFoodCornerModel.edmx</DependentUpon>
-      <LastGenOutput>OnlineFoodCornerModel.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -1971,13 +1993,69 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="Models\OnlineFoodCornerModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>OnlineFoodCornerModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\OnlineFoodCornerModel.edmx.diagram">
-      <DependentUpon>OnlineFoodCornerModel.edmx</DependentUpon>
-    </Content>
+    <Content Include="Content\assets\css\style.map" />
+    <Content Include="Content\assets\fonts\flat-icon\Flaticon.eot" />
+    <Content Include="Content\assets\fonts\flat-icon\Flaticon.ttf" />
+    <Content Include="Content\assets\fonts\flat-icon\Flaticon.woff" />
+    <Content Include="Content\assets\fonts\flat-icon\_flaticon.scss" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\assets\fonts\FontAwesome.otf" />
+    <Content Include="Content\assets\images\blog\cat-post\Thumbs.db" />
+    <Content Include="Content\assets\images\blog\main-blog\Thumbs.db" />
+    <Content Include="Content\assets\images\blog\popular-post\Thumbs.db" />
+    <Content Include="Content\assets\images\elements\Thumbs.db" />
+    <Content Include="Content\assets\images\elements\_DS_Store" />
+    <Content Include="Content\assets\sass\base\_base.scss" />
+    <Content Include="Content\assets\sass\layout\_about.scss" />
+    <Content Include="Content\assets\sass\layout\_banner.scss" />
+    <Content Include="Content\assets\sass\layout\_blog-details.scss" />
+    <Content Include="Content\assets\sass\layout\_blog-home.scss" />
+    <Content Include="Content\assets\sass\layout\_contact.scss" />
+    <Content Include="Content\assets\sass\layout\_deshes.scss" />
+    <Content Include="Content\assets\sass\layout\_elements.scss" />
+    <Content Include="Content\assets\sass\layout\_food.scss" />
+    <Content Include="Content\assets\sass\layout\_footer.scss" />
+    <Content Include="Content\assets\sass\layout\_header.scss" />
+    <Content Include="Content\assets\sass\layout\_menu.scss" />
+    <Content Include="Content\assets\sass\layout\_nav.scss" />
+    <Content Include="Content\assets\sass\layout\_preloader.scss" />
+    <Content Include="Content\assets\sass\layout\_reservation.scss" />
+    <Content Include="Content\assets\sass\layout\_table.scss" />
+    <Content Include="Content\assets\sass\layout\_testimonial.scss" />
+    <Content Include="Content\assets\sass\layout\_update.scss" />
+    <Content Include="Content\assets\sass\layout\_welcome.scss" />
+    <Content Include="Content\assets\sass\module\_btn.scss" />
+    <Content Include="Content\assets\sass\module\_form.scss" />
+    <Content Include="Content\assets\sass\module\_other.scss" />
+    <Content Include="Content\assets\sass\setting\_mixin.scss" />
+    <Content Include="Content\assets\sass\setting\_variable.scss" />
+    <Content Include="Content\assets\sass\style.scss" />
+    <Content Include="Content\scss\navs\_global.scss" />
+    <Content Include="Content\scss\navs\_sidebar.scss" />
+    <Content Include="Content\scss\navs\_topbar.scss" />
+    <Content Include="Content\scss\sb-admin-2.scss" />
+    <Content Include="Content\scss\utilities\_animation.scss" />
+    <Content Include="Content\scss\utilities\_background.scss" />
+    <Content Include="Content\scss\utilities\_border.scss" />
+    <Content Include="Content\scss\utilities\_display.scss" />
+    <Content Include="Content\scss\utilities\_progress.scss" />
+    <Content Include="Content\scss\utilities\_rotate.scss" />
+    <Content Include="Content\scss\utilities\_text.scss" />
+    <Content Include="Content\scss\_buttons.scss" />
+    <Content Include="Content\scss\_cards.scss" />
+    <Content Include="Content\scss\_charts.scss" />
+    <Content Include="Content\scss\_dropdowns.scss" />
+    <Content Include="Content\scss\_error.scss" />
+    <Content Include="Content\scss\_footer.scss" />
+    <Content Include="Content\scss\_global.scss" />
+    <Content Include="Content\scss\_login.scss" />
+    <Content Include="Content\scss\_mixins.scss" />
+    <Content Include="Content\scss\_navs.scss" />
+    <Content Include="Content\scss\_utilities.scss" />
+    <Content Include="Content\scss\_variables.scss" />
     <Content Include="Content\vendor\bootstrap\js\bootstrap.bundle.js.map" />
     <Content Include="Content\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
     <Content Include="Content\vendor\bootstrap\js\bootstrap.js.map" />
@@ -2122,69 +2200,6 @@
     <Content Include="Content\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="Content\vendor\jquery\jquery.min.map" />
     <Content Include="Content\vendor\jquery\jquery.slim.min.map" />
-    <Content Include="Content\scss\navs\_global.scss" />
-    <Content Include="Content\scss\navs\_sidebar.scss" />
-    <Content Include="Content\scss\navs\_topbar.scss" />
-    <Content Include="Content\scss\sb-admin-2.scss" />
-    <Content Include="Content\scss\utilities\_animation.scss" />
-    <Content Include="Content\scss\utilities\_background.scss" />
-    <Content Include="Content\scss\utilities\_border.scss" />
-    <Content Include="Content\scss\utilities\_display.scss" />
-    <Content Include="Content\scss\utilities\_progress.scss" />
-    <Content Include="Content\scss\utilities\_rotate.scss" />
-    <Content Include="Content\scss\utilities\_text.scss" />
-    <Content Include="Content\scss\_buttons.scss" />
-    <Content Include="Content\scss\_cards.scss" />
-    <Content Include="Content\scss\_charts.scss" />
-    <Content Include="Content\scss\_dropdowns.scss" />
-    <Content Include="Content\scss\_error.scss" />
-    <Content Include="Content\scss\_footer.scss" />
-    <Content Include="Content\scss\_global.scss" />
-    <Content Include="Content\scss\_login.scss" />
-    <Content Include="Content\scss\_mixins.scss" />
-    <Content Include="Content\scss\_navs.scss" />
-    <Content Include="Content\scss\_utilities.scss" />
-    <Content Include="Content\scss\_variables.scss" />
-    <Content Include="Content\assets\css\style.map" />
-    <Content Include="Content\assets\fonts\flat-icon\Flaticon.eot" />
-    <Content Include="Content\assets\fonts\flat-icon\Flaticon.ttf" />
-    <Content Include="Content\assets\fonts\flat-icon\Flaticon.woff" />
-    <Content Include="Content\assets\fonts\flat-icon\_flaticon.scss" />
-    <Content Include="Content\assets\fonts\fontawesome-webfont.eot" />
-    <Content Include="Content\assets\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Content\assets\fonts\fontawesome-webfont.woff" />
-    <Content Include="Content\assets\fonts\fontawesome-webfont.woff2" />
-    <Content Include="Content\assets\fonts\FontAwesome.otf" />
-    <Content Include="Content\assets\images\blog\cat-post\Thumbs.db" />
-    <Content Include="Content\assets\images\blog\main-blog\Thumbs.db" />
-    <Content Include="Content\assets\images\blog\popular-post\Thumbs.db" />
-    <Content Include="Content\assets\images\elements\Thumbs.db" />
-    <Content Include="Content\assets\images\elements\_DS_Store" />
-    <Content Include="Content\assets\sass\base\_base.scss" />
-    <Content Include="Content\assets\sass\layout\_about.scss" />
-    <Content Include="Content\assets\sass\layout\_banner.scss" />
-    <Content Include="Content\assets\sass\layout\_blog-details.scss" />
-    <Content Include="Content\assets\sass\layout\_blog-home.scss" />
-    <Content Include="Content\assets\sass\layout\_contact.scss" />
-    <Content Include="Content\assets\sass\layout\_deshes.scss" />
-    <Content Include="Content\assets\sass\layout\_elements.scss" />
-    <Content Include="Content\assets\sass\layout\_food.scss" />
-    <Content Include="Content\assets\sass\layout\_footer.scss" />
-    <Content Include="Content\assets\sass\layout\_header.scss" />
-    <Content Include="Content\assets\sass\layout\_menu.scss" />
-    <Content Include="Content\assets\sass\layout\_nav.scss" />
-    <Content Include="Content\assets\sass\layout\_preloader.scss" />
-    <Content Include="Content\assets\sass\layout\_reservation.scss" />
-    <Content Include="Content\assets\sass\layout\_table.scss" />
-    <Content Include="Content\assets\sass\layout\_testimonial.scss" />
-    <Content Include="Content\assets\sass\layout\_update.scss" />
-    <Content Include="Content\assets\sass\layout\_welcome.scss" />
-    <Content Include="Content\assets\sass\module\_btn.scss" />
-    <Content Include="Content\assets\sass\module\_form.scss" />
-    <Content Include="Content\assets\sass\module\_other.scss" />
-    <Content Include="Content\assets\sass\setting\_mixin.scss" />
-    <Content Include="Content\assets\sass\setting\_variable.scss" />
-    <Content Include="Content\assets\sass\style.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -2231,31 +2246,41 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Admin\ProductList.cshtml" />
-    <Content Include="Views\Admin\AddProduct.cshtml" />
-    <Content Include="Views\Admin\EditProduct.cshtml" />
-    <Content Include="Views\Admin\ProductDetails.cshtml" />
-    <Content Include="Views\Admin\ProductDelete.cshtml" />
-    <Content Include="Views\Admin\ProductListReadOnly.cshtml" />
-    <Content Include="Views\Admin\AddOrder.cshtml" />
-    <Content Include="Views\Admin\OrderList.cshtml" />
-    <Content Include="Views\Admin\Menu.cshtml" />
-    <Content Include="Views\Shared\_AdminLayout.cshtml" />
-    <Content Include="Views\Shared\_UserLayout.cshtml" />
-    <Content Include="Views\Admin\AdminDashboard.cshtml" />
-    <Content Include="Views\Admin\UserDashboard.cshtml" />
+    <Content Include="Views\Layout\_AboutLayout.cshtml" />
+    <Content Include="Views\Layout\_AdminLayout.cshtml" />
+    <Content Include="Views\Layout\_ContactLayout.cshtml" />
+    <Content Include="Views\Layout\_ForgotPassword.cshtml" />
+    <Content Include="Views\Layout\_HomeLayout.cshtml" />
+    <Content Include="Views\Layout\_LoginLayout.cshtml" />
     <Content Include="Views\Shared\_Logout.cshtml" />
-    <Content Include="Views\Shared\_HomeLayout.cshtml" />
-    <Content Include="Views\Shared\_MenuLayout.cshtml" />
-    <Content Include="Views\Shared\_AboutLayout.cshtml" />
-    <Content Include="Views\Shared\_ContactLayout.cshtml" />
-    <Content Include="Views\Shared\_LoginLayout.cshtml" />
-    <Content Include="Views\Shared\_RegisterLayout.cshtml" />
-    <Content Include="Views\Shared\_ForgotPassword.cshtml" />
+    <Content Include="Views\Layout\_MenuLayout.cshtml" />
+    <Content Include="Views\Layout\_RegisterLayout.cshtml" />
+    <Content Include="Views\Layout\_UserLayout.cshtml" />
+    <Content Include="Views\Admin\AddOrder.cshtml" />
+    <Content Include="Views\Admin\AddProduct.cshtml" />
+    <Content Include="Views\Admin\AdminDashboard.cshtml" />
+    <Content Include="Views\Admin\EditProduct.cshtml" />
+    <Content Include="Views\Admin\Menu.cshtml" />
+    <Content Include="Views\Admin\OrderList.cshtml" />
+    <Content Include="Views\Admin\ProductDelete.cshtml" />
+    <Content Include="Views\Admin\ProductDetails.cshtml" />
+    <Content Include="Views\Admin\ProductList.cshtml" />
+    <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\Customer\CustomerDashboard.cshtml" />
+    <Content Include="Views\Customer\ProductListReadOnly.cshtml" />
+    <Content Include="Views\Customer\MakeOrder.cshtml" />
+    <Content Include="Views\Customer\OrderList.cshtml" />
+    <Content Include="Views\Layout\_UserListLayout.cshtml" />
+    <Content Include="Views\Layout\_AdminListLayout.cshtml" />
+    <Content Include="Views\Admin\CreateEmployee.cshtml" />
+    <Content Include="Views\Admin\EmployeeList.cshtml" />
+    <Content Include="Views\Admin\EditEmployee.cshtml" />
+    <Content Include="Views\Admin\DeleteEmployee.cshtml" />
+    <Content Include="Views\Admin\EmployeeDetails.cshtml" />
+    <Content Include="Views\Admin\SendOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\ProductPictures\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -2266,7 +2291,69 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <EmbeddedResource Include="Migrations\201904241023074_InitialCreate.resx">
+      <DependentUpon>201904241023074_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904241257072_InitialModel.resx">
+      <DependentUpon>201904241257072_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904251229267_AddAddressTOApplicationUser.resx">
+      <DependentUpon>201904251229267_AddAddressTOApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904251231253_AddCellNumberToApplicationUserClass.resx">
+      <DependentUpon>201904251231253_AddCellNumberToApplicationUserClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904251307177_SeedUsers.resx">
+      <DependentUpon>201904251307177_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904251633556_AddCustomerInDb.resx">
+      <DependentUpon>201904251633556_AddCustomerInDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904251643064_AddOrder.resx">
+      <DependentUpon>201904251643064_AddOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904251650519_AddProduct.resx">
+      <DependentUpon>201904251650519_AddProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904251659451_AddCustomerInDb1.resx">
+      <DependentUpon>201904251659451_AddCustomerInDb1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904251701287_AddOrder1.resx">
+      <DependentUpon>201904251701287_AddOrder1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904251704581_AddDelivery.resx">
+      <DependentUpon>201904251704581_AddDelivery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904251706526_AddOrder2.resx">
+      <DependentUpon>201904251706526_AddOrder2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904251708194_AddProduct1.resx">
+      <DependentUpon>201904251708194_AddProduct1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904251713017_AddWorker.resx">
+      <DependentUpon>201904251713017_AddWorker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904251714559_AddDelivery1.resx">
+      <DependentUpon>201904251714559_AddDelivery1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904251834243_Setting.resx">
+      <DependentUpon>201904251834243_Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904251907053_UpdateCustomerClass.resx">
+      <DependentUpon>201904251907053_UpdateCustomerClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904252031068_AddApplicationUserId.resx">
+      <DependentUpon>201904252031068_AddApplicationUserId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904252047240_AddQuanityInOrders.resx">
+      <DependentUpon>201904252047240_AddQuanityInOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904271027407_balance.resx">
+      <DependentUpon>201904271027407_balance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904271045205_AddOrderToWorker.resx">
+      <DependentUpon>201904271045205_AddOrderToWorker.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -2284,9 +2371,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>54012</DevelopmentServerPort>
+          <DevelopmentServerPort>51171</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:54012/</IISUrl>
+          <IISUrl>http://localhost:51171/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
