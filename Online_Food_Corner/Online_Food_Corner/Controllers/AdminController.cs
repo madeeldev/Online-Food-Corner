@@ -33,10 +33,12 @@ namespace Online_Food_Corner.Controllers
             return View();
         }
 
-        //Menu
+        //EMenu
         public ActionResult Menu()
         {
-            return View();
+            var products = db.Products.ToList();
+
+            return View(products);
         }
 
         //Product List
@@ -121,9 +123,15 @@ namespace Online_Food_Corner.Controllers
         public ActionResult OrderList()
         {
             var order = db.Orders.ToList();
+            ViewBag.count = order.Count;
             return View(order);
         }
-
+        //Order Details
+        public ActionResult OrderDetails(int id)
+        {
+            var order = db.Orders.SingleOrDefault(x => x.id == id);
+            return View(order);
+        }
         //Create Chef
         public ActionResult CreateEmployee()
         {
@@ -158,8 +166,8 @@ namespace Online_Food_Corner.Controllers
             worker.worker_name = model.worker_name;
             worker.worker_status = model.worker_status;
             worker.salary = model.salary;
+            
             db.SaveChanges();
-            db.Workers.Add(model);
             return RedirectToAction("EmployeeList");
         }
 
@@ -184,10 +192,71 @@ namespace Online_Food_Corner.Controllers
             return View(worker);
         }
 
+        //Customer List
+        public ActionResult CustomerList()
+        {
+            var customer = db.Customers.ToList();
+            ViewBag.count = customer.Count;
+            return View(customer);
+        }
         //Send Order
+        //OrderId
         public ActionResult SendOrder(int id)
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult SendOrder(int id, WorkerOrder model)
+        {
+            var order = db.Orders.SingleOrDefault(x => x.id == id);
+            var worker = db.Workers.SingleOrDefault(x=>x.id == model.WorkerId);
+            model.Order = order;
+            model.Worker = worker;
+            db.WorkerOrders.Add(model);
+            db.SaveChanges();
+            return RedirectToAction("WorkersOrder");
+        }
+        //workers Order List
+        public ActionResult WorkersOrder()
+        {
+            var workersOrder = db.WorkerOrders.ToList();
+            return View(workersOrder);
+        }
+        //Edit Worker Order
+        public ActionResult EditWorkerOrder(int id)
+        {
+            var workersOrder = db.WorkerOrders.SingleOrDefault(x=> x.Id == id);
+            return View(workersOrder);
+        }
+
+        [HttpPost]
+        public ActionResult EditWorkerOrder(int id, WorkerOrder model)
+        {
+            var workersOrder = db.WorkerOrders.Single(x=> x.Id == id);
+            var worker = db.Workers.Single(x => x.id == model.WorkerId);
+            var order = db.Orders.Single(x => x.id == model.OrderId);
+            workersOrder.Worker = worker;
+            workersOrder.Order = order;
+            db.SaveChanges();
+            return RedirectToAction("WorkersOrder");
+        }
+        //delete worker order
+        public ActionResult DeleteWorkerOrder(int? id)
+        {
+            var workerOrder = db.WorkerOrders.SingleOrDefault(x => x.Id == id);
+            return View(workerOrder);
+            
+        }
+
+        //Delete worker order
+        [HttpPost]
+        public ActionResult DeleteWorkerOrder(int id)
+        {
+            var workerOrder = db.WorkerOrders.Single(x => x.Id == id);
+            db.WorkerOrders.Remove(workerOrder);
+            db.SaveChanges();
+            return RedirectToAction("WorkersOrder");
         }
     }
 }

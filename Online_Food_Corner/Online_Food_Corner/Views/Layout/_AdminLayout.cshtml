@@ -69,6 +69,7 @@
                         <h6 class="collapse-header">Components:</h6>
                         @Html.ActionLink("Add Products", "AddProduct", "Admin", null, new { @class = "collapse-item" })
                         @Html.ActionLink("Add Employee", "CreateEmployee", "Admin", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Send Order", "OrderList", "Admin", null, new { @class = "collapse-item" })
                     </div>
                 </div>
             </li>
@@ -84,6 +85,9 @@
                         <h6 class="collapse-header">Utilities:</h6>
                         @Html.ActionLink("Product Lists", "ProductList", "Admin", null, new { @class = "collapse-item" })
                         @Html.ActionLink("Employee List", "EmployeeList", "Admin", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Customer List", "CustomerList", "Admin", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Order List", "OrderList", "Admin", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Workers Order List", "WorkersOrder", "Admin", null, new { @class = "collapse-item" })
                     </div>
                 </div>
             </li>

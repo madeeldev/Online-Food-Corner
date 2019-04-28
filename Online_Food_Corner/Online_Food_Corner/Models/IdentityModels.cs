@@ -30,6 +30,7 @@ namespace Online_Food_Corner.Models
         public DbSet<Product> Products { get; set; }
         public DbSet<Worker> Workers { get; set; }
         public DbSet<Delivery> Deliveries { get; set; }
+        public DbSet<WorkerOrder> WorkerOrders { get; set; }
 
 
         public ApplicationDbContext()

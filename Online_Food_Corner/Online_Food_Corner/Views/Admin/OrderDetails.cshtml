@@ -1,0 +1,80 @@
+﻿@using Online_Food_Corner.Models
+@model Online_Food_Corner.Models.Order
+
+@{
+    ViewBag.Title = "Order Details";
+    ViewBag.Main = "Order";
+    Layout = "~/Views/Layout/_AdminLayout.cshtml";
+}
+
+@{
+    var db = new ApplicationDbContext();
+    var customer = db.Customers.Single(x => x.id == Model.CustomerId);
+    var product = db.Products.Single(x => x.id == Model.CustomerId);
+    ViewBag.cutomerName = customer.customer_name;
+    ViewBag.productName = product.product_name;
+}
+<div>
+    
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.customer_name)
+        </dt>
+
+        <dd>
+            @ViewBag.cutomerName
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.product_name)
+        </dt>
+
+        <dd>
+            @ViewBag.productName
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.total_price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.total_price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.timing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.timing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.delivery_mode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.delivery_mode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.order_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.order_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "OrderList")
+</p>

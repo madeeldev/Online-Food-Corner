@@ -1,0 +1,54 @@
+﻿@using Microsoft.Owin.Logging
+@using Online_Food_Corner.Models
+@model IEnumerable<Online_Food_Corner.Models.WorkerOrder>
+
+@{
+    ViewBag.Title = "Workers Order List";
+    ViewBag.Main = "Worker";
+    Layout = "~/Views/Layout/_AdminListLayout.cshtml";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Worker.worker_status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkerId)
+        </td>
+        @{
+            var db = new ApplicationDbContext();
+            var worker = db.Workers.SingleOrDefault(x => x.id == item.WorkerId);
+            ViewBag.workerStatus = worker.worker_status;
+        }
+        <td>
+            @ViewBag.workerStatus
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditWorkerOrder", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "DeleteWorkerOrder", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

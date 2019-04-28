@@ -287,6 +287,14 @@
     <Compile Include="Migrations\201904271045205_AddOrderToWorker.Designer.cs">
       <DependentUpon>201904271045205_AddOrderToWorker.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904271241558_AddWorkerOrder.cs" />
+    <Compile Include="Migrations\201904271241558_AddWorkerOrder.Designer.cs">
+      <DependentUpon>201904271241558_AddWorkerOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904271316157_AddWorkerOrder1.cs" />
+    <Compile Include="Migrations\201904271316157_AddWorkerOrder1.Designer.cs">
+      <DependentUpon>201904271316157_AddWorkerOrder1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -295,8 +303,10 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Purchases.cs" />
     <Compile Include="Models\RoleName.cs" />
     <Compile Include="Models\Worker.cs" />
+    <Compile Include="Models\WorkerOrder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -2278,6 +2288,11 @@
     <Content Include="Views\Admin\DeleteEmployee.cshtml" />
     <Content Include="Views\Admin\EmployeeDetails.cshtml" />
     <Content Include="Views\Admin\SendOrder.cshtml" />
+    <Content Include="Views\Admin\CustomerList.cshtml" />
+    <Content Include="Views\Admin\OrderDetails.cshtml" />
+    <Content Include="Views\Admin\WorkersOrder.cshtml" />
+    <Content Include="Views\Admin\EditWorkerOrder.cshtml" />
+    <Content Include="Views\Admin\DeleteWorkerOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2353,6 +2368,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904271045205_AddOrderToWorker.resx">
       <DependentUpon>201904271045205_AddOrderToWorker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904271241558_AddWorkerOrder.resx">
+      <DependentUpon>201904271241558_AddWorkerOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904271316157_AddWorkerOrder1.resx">
+      <DependentUpon>201904271316157_AddWorkerOrder1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

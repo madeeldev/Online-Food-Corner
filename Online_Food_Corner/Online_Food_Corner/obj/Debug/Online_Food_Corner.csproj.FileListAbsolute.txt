@@ -102,3 +102,5 @@ C:\Users\User\Documents\Visual Studio 2015\Projects\Online_Food_Corner\Online_Fo
 C:\Users\User\Documents\Visual Studio 2015\Projects\Online_Food_Corner\Online_Food_Corner\obj\Debug\Online_Food_Corner.Migrations.AddQuanityInOrders.resources
 C:\Users\User\Documents\Visual Studio 2015\Projects\Online_Food_Corner\Online_Food_Corner\obj\Debug\Online_Food_Corner.Migrations.balance.resources
 C:\Users\User\Documents\Visual Studio 2015\Projects\Online_Food_Corner\Online_Food_Corner\obj\Debug\Online_Food_Corner.Migrations.AddOrderToWorker.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Online_Food_Corner\Online_Food_Corner\obj\Debug\Online_Food_Corner.Migrations.AddWorkerOrder.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Online_Food_Corner\Online_Food_Corner\obj\Debug\Online_Food_Corner.Migrations.AddWorkerOrder1.resources
