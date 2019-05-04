@@ -1,0 +1,48 @@
+﻿@using Online_Food_Corner.Models
+@model Online_Food_Corner.Models.Order
+
+@{
+    ViewBag.Title = "Send Reply";
+    ViewBag.Main = "Employee";
+    Layout = "~/Views/Layout/_EmployeeLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.id)
+        @{
+            var presentOrder = new List<Order>
+            {
+                new Order{ Status = "Delivered"},
+                new Order {Status = "Not Delivered"}
+            };
+        }
+        <div class="form-group">
+            @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Status, new SelectList(presentOrder, "Status", "Status"), "Select Order Status", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-info" style="margin-left: 510px" />
+            </div>
+        </div>
+    </div>
+            }
+
+<div>
+    @Html.ActionLink("Back to List", "EmployeeOrder")
+</div>
+
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

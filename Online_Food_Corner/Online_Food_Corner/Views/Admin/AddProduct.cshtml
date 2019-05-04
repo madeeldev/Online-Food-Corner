@@ -15,10 +15,10 @@
         <h3>@ViewBag.Error</h3>
         @Html.ValidationSummary(true, "", new {@class = "text-danger"})
         <div class="form-group">
-            <label class="control-label col-md-4" for="product_name">Product Name</label>
+            @Html.LabelFor(model => model.product_name, htmlAttributes: new { @class = "control-label col-md-4" })
             <div class="col-md-10">
-                <input class="form-control" id="product_name" name="product_name" type="text" value="">
-                <span class="field-validation-valid text-danger" data-valmsg-for="product_name" data-valmsg-replace="true"></span>
+                @Html.EditorFor(model => model.product_name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.product_name, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -41,7 +41,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.product_picture, htmlAttributes: new {@class = "control-label col-md-4"})
             <div class="col-md-10">
-                <input class="btn btn-success form-control" style="padding-bottom: 35px" type="file" id="pImage" name="pImage" />
+                <input class="btn btn-info form-control" style="padding-bottom: 35px" type="file" id="pImage" name="pImage" required="required" />
             </div>
         </div>
 
@@ -55,6 +55,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
+                
                 <input type="submit" value="Add Product" class="btn btn-info" style="margin-left: 455px"/>
             </div>
         </div>
@@ -65,7 +66,7 @@
     @Html.ActionLink("Back to List", "ProductList")
 </div>
 
-
-@section Scripts {
+@section scripts
+{
     @Scripts.Render("~/bundles/jqueryval")
 }

@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -9,11 +10,12 @@ namespace Online_Food_Corner.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+        [Display(Name = "User Name")]
         public string firstName { get; set; }
+        [Display(Name = "Address")]
         public string address { get; set; }
+        [Display(Name = "Phone Number")]
         public string cellNumber { get; set; }
-
-        
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -32,7 +34,6 @@ namespace Online_Food_Corner.Models
         public DbSet<Delivery> Deliveries { get; set; }
         public DbSet<WorkerOrder> WorkerOrders { get; set; }
 
-
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -42,5 +43,7 @@ namespace Online_Food_Corner.Models
         {
             return new ApplicationDbContext();
         }
+
+        
     }
 }

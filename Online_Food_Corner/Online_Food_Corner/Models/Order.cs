@@ -21,11 +21,15 @@ namespace Online_Food_Corner.Models
         [Required]
         [Display(Name = "Order Date")]
         public System.DateTime order_date { get; set; }
+        [Required]
+        [Display(Name = "Order Status")]
+        public String Status { get; set; }
 
         public Customer Customer { get; set; }
         public int CustomerId { get; set; }
         public Product Product { get; set; }
         public int ProductId { get; set; }
-        public int Quantity { get; set; }   
+        public int Quantity { get; set; }
     }
+    
 }

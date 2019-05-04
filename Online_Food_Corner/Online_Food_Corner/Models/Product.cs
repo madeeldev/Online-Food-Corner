@@ -25,5 +25,6 @@ namespace Online_Food_Corner.Models
         [Required]
         [Display(Name = "Product Quantity")]
         public int product_quantity { get; set; }
+        public bool IsChecked { get; set; }
     }
 }

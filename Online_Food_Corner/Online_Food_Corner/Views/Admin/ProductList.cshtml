@@ -9,25 +9,7 @@
     @Html.ActionLink("Create New", "AddProduct")
 </p>
 <table class="table">
-    @*<tr>
-        <th>
-            @Html.DisplayNameFor(model => model.product_name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.product_type)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.product_Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.product_picture)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.product_quantity)
-        </th>
-        <th></th>
-    </tr>*@
-
+    
 @foreach (var item in Model) {
     <tr>
         <td>
@@ -45,7 +27,7 @@
                 @{
                     var a = (item.product_Price) / (item.product_quantity);
                 }
-                @Html.DisplayFor(modelItem => a)
+                $@Html.DisplayFor(modelItem => a)
             </div>
         </td>
         <td>
@@ -75,3 +57,8 @@
 <div>
     <hr/>
 </div>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

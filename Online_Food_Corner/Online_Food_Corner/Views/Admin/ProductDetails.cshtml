@@ -72,3 +72,8 @@
     @Html.ActionLink("Edit", "EditProduct", new { id = Model.id }) |
     @Html.ActionLink("Back to List", "ProductList")
 </p>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,47 @@
+﻿@using Online_Food_Corner.Models
+@model Online_Food_Corner.Models.Order
+
+@{
+    ViewBag.Main = "Order";
+    ViewBag.Title = "Edit Order";
+    Layout = "~/Views/Layout/_UserLayout.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.id)
+
+        @{
+            var db = new ApplicationDbContext();
+            var AllProducts = db.Products.ToList();
+        }
+        
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Product, new SelectList(AllProducts, "id", "product_name"), "Select Desired Product", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Product, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10" style="margin-left: 475px">
+                <input type="submit" value="Save Edit" class="btn btn-info" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to Order List", "OrderList") | @Html.ActionLink("Go to Product List", "ProductListReadOnly")
+</div>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

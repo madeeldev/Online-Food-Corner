@@ -43,6 +43,9 @@
                     @Html.DisplayNameFor(model => model.order_date)
                 </th>
                 <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+                <th>
                     @Html.DisplayNameFor(model => model.Product.product_name)
                 </th>
                 <th></th>
@@ -63,6 +66,9 @@
                         @Html.DisplayFor(modelItem => item.order_date)
                     </td>
                     <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td>
                         @{
                             var db = new ApplicationDbContext();
                             var id = item.ProductId;
@@ -71,13 +77,18 @@
                         }
                         @ViewBag.pName
                     </td>
+                    
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-                        @Html.ActionLink("Details", "Details", new { id=item.id }) |
-                        @Html.ActionLink("Delete", "Delete", new { id=item.id })
+                        @Html.ActionLink("Edit", "EditOrder", new { id=item.id }) |
+                        @Html.ActionLink("Details", "OrderDetails", new { id=item.id }) |
+                        @Html.ActionLink("Delete", "DeleteOrder", new { id=item.id })
                     </td>
                 </tr>
             }
         </table>
     }
+}
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
 }

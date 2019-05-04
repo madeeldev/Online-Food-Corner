@@ -10,7 +10,7 @@
 @{
     var db = new ApplicationDbContext();
     var customer = db.Customers.Single(x => x.id == Model.CustomerId);
-    var product = db.Products.Single(x => x.id == Model.CustomerId);
+    var product = db.Products.Single(x => x.id == Model.ProductId);
     ViewBag.cutomerName = customer.customer_name;
     ViewBag.productName = product.product_name;
 }
@@ -38,7 +38,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.total_price)
+            $@Html.DisplayFor(model => model.total_price)
         </dd>
 
         <dt>
@@ -78,3 +78,8 @@
 <p>
     @Html.ActionLink("Back to List", "OrderList")
 </p>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

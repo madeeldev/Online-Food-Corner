@@ -41,9 +41,14 @@
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
+        <div class="">
             <input type="submit" value="Delete" class="btn btn-info" /> |
             @Html.ActionLink("Back to List", "EmployeeList")
         </div>
     }
 </div>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

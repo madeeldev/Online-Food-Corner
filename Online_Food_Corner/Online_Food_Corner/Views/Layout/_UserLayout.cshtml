@@ -11,6 +11,7 @@
     <meta name="author" content="">
 
     <title>User Dashboard</title>
+    <link rel="shortcut icon" href="~/Content/assets/images/logo/favicon.png" type="image/x-icon">
 
     <!-- Custom fonts for this template-->
     <link href="~/Content/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -67,6 +68,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Utilities:</h6>
                         @Html.ActionLink("Available Products", "ProductListReadOnly", "Customer", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Order Multiple Products", "MakeOrderList", "Customer", null, new { @class = "collapse-item" })
                         @Html.ActionLink("Orders List", "OrderList", "Customer", null, new { @class = "collapse-item" })
                         @Html.ActionLink("Your Cart", "", "Customer", null, new { @class = "collapse-item" })
                     </div>
@@ -170,7 +172,7 @@
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="@Url.Action("UserProfile", "Customer")">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>

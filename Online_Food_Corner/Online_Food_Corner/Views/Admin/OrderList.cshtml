@@ -17,6 +17,9 @@
         <table class="table">
             <tr>
                 <th>
+                    @Html.DisplayNameFor(model => model.id)
+                </th>
+                <th>
                     @Html.DisplayNameFor(model => model.total_price)
                 </th>
                 <th>
@@ -34,11 +37,17 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Product.product_name)
                 </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
                 <th></th>
             </tr>
 
             @foreach (var item in Model) {
                 <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.id)
+                    </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.total_price)
                     </td>
@@ -55,7 +64,7 @@
                         @{
                             var db = new ApplicationDbContext();
                             var customer = db.Customers.Single(x => x.id == item.CustomerId);
-                            var product = db.Products.Single(x => x.id == item.CustomerId);
+                            var product = db.Products.Single(x => x.id == item.ProductId);
                             ViewBag.cutomerName = customer.customer_name;
                             ViewBag.productName = product.product_name;
                         }
@@ -65,8 +74,11 @@
                         @ViewBag.productName
                     </td>
                     <td>
-                        @Html.ActionLink("Details", "OrderDetails", new { id=item.id }) |
-                        @Html.ActionLink("Send", "SendOrder", new { id = item.id })
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Details", "OrderDetails", new {id = item.id}) |
+                        @Html.ActionLink("Send", "SendOrder", new {id = item.id})
                     </td>
                 </tr>
             }
@@ -75,4 +87,9 @@
 
 
     }
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
 }

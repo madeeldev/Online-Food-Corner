@@ -81,15 +81,24 @@ namespace Online_Food_Corner.Controllers
             {
                 case SignInStatus.Success:
                     var user = await UserManager.FindAsync(model.Email, model.Password);
+                    
                     if (UserManager.IsInRole(user.Id, RoleName.CanManageOFC))
                     {
                         return RedirectToAction("AdminDashboard", "Admin");  
+                    }
+                    else if (UserManager.IsInRole(user.Id, RoleName.Chef))
+                    {
+                        return RedirectToAction("ChefDashboard", "Admin");
+                    }
+                    else if (UserManager.IsInRole(user.Id, RoleName.DeliveryTeamMember))
+                    {
+                        return RedirectToAction("TeamMemberDashboard", "Admin");
                     }
                     else
                     {
                         return RedirectToAction("CustomerDashboard", "Customer");
                     }
-
+                    
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:

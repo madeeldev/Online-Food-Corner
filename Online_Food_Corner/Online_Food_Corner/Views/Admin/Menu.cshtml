@@ -3,56 +3,44 @@
     ViewBag.Title = "Menu Page";
     Layout = "~/Views/Layout/_MenuLayout.cshtml";
 }
-@*<header>
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="~/Content/assets/css/animate-3.7.0.css">
-    <link rel="stylesheet" href="~/Content/assets/css/font-awesome-4.7.0.min.css">
-    <link rel="stylesheet" href="~/Content/assets/css/bootstrap-4.1.3.min.css">
-    <link rel="stylesheet" href="~/Content/assets/css/owl-carousel.min.css">
-    <link rel="stylesheet" href="~/Content/assets/css/jquery.datetimepicker.min.css">
-    <link rel="stylesheet" href="~/Content/assets/css/style.css">
-    
-    <!-- Javascript -->
-    <script src="~/Content/assets/js/vendor/jquery-2.2.4.min.js"></script>
-    <script src="~/Content/assets/js/vendor/bootstrap-4.1.3.min.js"></script>
-    <script src="~/Content/assets/js/vendor/wow.min.js"></script>
-    <script src="~/Content/assets/js/vendor/owl-carousel.min.js"></script>
-    <script src="~/Content/assets/js/vendor/jquery.datetimepicker.full.min.js"></script>
-    <script src="~/Content/assets/js/vendor/jquery.nice-select.min.js"></script>
-    <script src="~/Content/assets/js/main.js"></script>
-</header>*@
+
 <div class="row">
     
-            @{
-                if (ViewBag.count == 0)
-                {
-                    <p>EMenu has no Food. </p>
-                }
-                else
-                {
-                    foreach (var item in Model)
-                    {
-                        string imageBase64 = Convert.ToBase64String(item.product_picture);
-                        string imageSrc = string.Format("data:image/gif;base64,{0}", imageBase64);
-                        var pPrice = (item.product_Price) / (item.product_quantity);
+    @{
+        if (ViewBag.count == 0)
+        {
+            <p>EMenu has no Food. </p>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                string imageBase64 = Convert.ToBase64String(item.product_picture);
+                string imageSrc = string.Format("data:image/gif;base64,{0}", imageBase64);
+                var pPrice = (item.product_Price) / (item.product_quantity);
 
-                        <div class="col-md-4 col-sm-6">
-                            <div class="single-food">
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-food">
 
-                                <div class="food-img">
-                                    <img src="@imageSrc" class="img-fluid" alt="">
-                                </div>
-                                <div class="food-content">
-                                    <div class="d-flex justify-content-between">
-                                        <h5>@item.product_name</h5>
-                                        <span class="style-change">$@pPrice</span>
-                                    </div>
-                                    <p class="pt-3">Face together given moveth divided form Of Seasons that fruitful.</p>
-                                </div>
-                            </div>
+                        <div class="food-img">
+                            <img src="@imageSrc" class="img-fluid" alt="">
                         </div>
-                    }
-                }
-                
+                        <div class="food-content">
+                            <div class="d-flex justify-content-between">
+                                <h5>@item.product_name</h5>
+                                <span class="style-change">$@pPrice</span>
+                            </div>
+                            <p class="pt-3">Face together given moveth divided form Of Seasons that fruitful.</p>
+                        </div>
+                    </div>
+                </div>
             }
+        }
+                
+    }
 </div>
+    
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

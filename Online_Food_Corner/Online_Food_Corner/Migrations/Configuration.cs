@@ -10,7 +10,6 @@ namespace Online_Food_Corner.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "Online_Food_Corner.Models.ApplicationDbContext";
         }
 
         protected override void Seed(Online_Food_Corner.Models.ApplicationDbContext context)
