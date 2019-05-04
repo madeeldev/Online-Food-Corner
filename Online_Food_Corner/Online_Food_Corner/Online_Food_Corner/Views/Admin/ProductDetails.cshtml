@@ -1,0 +1,79 @@
+﻿@model Online_Food_Corner.Models.Product
+
+@{
+    ViewBag.Title = "ProductDetails";
+    Layout = "~/Views/Layout/_AdminLayout.cshtml";
+}
+<div class="col-md-12">
+    <ol class="breadcrumb">
+        <li>
+            <a href="#">
+                <em class="fa fa-home"></em>
+            </a>
+        </li>
+        <li class="breadcrumb-item">Products</li>
+        <li class="breadcrumb-item">Product Details</li>
+    </ol>
+</div>
+
+<h2>Product Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.product_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.product_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.product_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.product_type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.product_Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.product_Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.product_picture)
+        </dt>
+
+        <dd>
+            @{
+                string imageBase64 = Convert.ToBase64String(Model.product_picture);
+                string imageSrc = string.Format("data:image/gif;base64,{0}", imageBase64);
+
+            }
+            <img src="@imageSrc" width="100" height="100" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.product_quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.product_quantity)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditProduct", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "ProductList")
+</p>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

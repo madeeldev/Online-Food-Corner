@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Online_Food_Corner.Models.Worker>
+
+@{
+    ViewBag.Title = "Employee List";
+    ViewBag.Main = "Admin";
+    Layout = "~/Views/Layout/_AdminListLayout.cshtml";
+}
+
+
+<p>
+    @Html.ActionLink("Create New", "CreateEmployee")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.worker_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.salary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.worker_status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.worker_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.salary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.worker_status)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditEmployee", new {id = item.id}) |
+            @Html.ActionLink("Details", "EmployeeDetails", new {id = item.id}) |
+            @Html.ActionLink("Delete", "DeleteEmployee", new {id = item.id}) |
+            @Html.ActionLink("Go to Send Order", "OrderList", new {id = item.id})
+        </td>
+    </tr>
+}
+
+</table>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

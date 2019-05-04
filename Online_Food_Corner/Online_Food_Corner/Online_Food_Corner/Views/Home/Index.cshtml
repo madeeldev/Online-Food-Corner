@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Online_Food_Corner.Models.Product>
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Layout/_HomeLayout.cshtml";
+}
+<header>
+    <!-- Custom fonts for this template-->
+    <link href="~/Content/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+</header>
+@using (Html.BeginForm("Search", "Home", FormMethod.Get))
+{
+    <div class="input-group">
+        @Html.TextBox("searchName", null, new { @class = "form-control border-0 small", @style = "margin-left:500px;background-color: #fff;flex-wrap: nowrap;padding: 16px;box-shadow: 0 2px 28px 0 rgba(0,0,0,0.12);", @placeholder = "Search Product" })<div style="margin: 0 0 0 16px;flex: 0 0 auto;"><button type="submit" class="btn btn-primary" style="margin-bottom: 20px; color: #fff; background-color: #D70F64;border-color: #D70F64">Find Product you want</button></div>
+
+    </div>
+}
+<div class="row">
+    
+    @{
+        if (ViewBag.count == 0)
+        {
+            <p>EMenu has no Food. </p>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                string imageBase64 = Convert.ToBase64String(item.product_picture);
+                string imageSrc = string.Format("data:image/gif;base64,{0}", imageBase64);
+                var pPrice = (item.product_Price) / (item.product_quantity);
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-food">
+
+                        <div class="food-img">
+                            <img src="@imageSrc" class="img-fluid" alt="">
+                        </div>
+                        <div class="food-content">
+                            <div class="d-flex justify-content-between">
+                                <h5>@item.product_name</h5>
+                                <span class="style-change">$@pPrice</span>
+                            </div>
+                            <p class="pt-3">Face together given moveth divided form Of Seasons that fruitful.</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+                
+    }
+</div>

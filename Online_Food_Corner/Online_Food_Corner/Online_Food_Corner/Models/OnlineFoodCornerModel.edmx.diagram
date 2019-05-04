@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c3641fe334a6494c949fd8b05c6585f4" Name="Diagram1">
+        <EntityTypeShape EntityType="OnlineFoodCornerModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineFoodCornerModel.Admin" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineFoodCornerModel.AspNetRole" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineFoodCornerModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineFoodCornerModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineFoodCornerModel.AspNetUser" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineFoodCornerModel.Customer" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineFoodCornerModel.Delivery" Width="1.5" PointX="10.5" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineFoodCornerModel.Order" Width="1.5" PointX="8.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineFoodCornerModel.Product" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineFoodCornerModel.sysdiagram" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineFoodCornerModel.Worker" Width="1.5" PointX="10.5" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="OnlineFoodCornerModel.FK_Admin_Delivery" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineFoodCornerModel.FK_Admin_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineFoodCornerModel.FK_Admin_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineFoodCornerModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineFoodCornerModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineFoodCornerModel.FK_Customer_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineFoodCornerModel.FK_Customer_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineFoodCornerModel.FK_Order_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineFoodCornerModel.FK_Delivery_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineFoodCornerModel.FK_Order_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineFoodCornerModel.FK_Worker_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineFoodCornerModel.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

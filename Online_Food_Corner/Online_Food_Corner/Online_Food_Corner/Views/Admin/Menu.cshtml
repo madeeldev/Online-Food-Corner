@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Online_Food_Corner.Models.Product>
+@{
+    ViewBag.Title = "Menu Page";
+    Layout = "~/Views/Layout/_MenuLayout.cshtml";
+}
+
+<div class="row">
+    
+    @{
+        if (ViewBag.count == 0)
+        {
+            <p>EMenu has no Food. </p>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                string imageBase64 = Convert.ToBase64String(item.product_picture);
+                string imageSrc = string.Format("data:image/gif;base64,{0}", imageBase64);
+                var pPrice = (item.product_Price) / (item.product_quantity);
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-food">
+
+                        <div class="food-img">
+                            <img src="@imageSrc" class="img-fluid" alt="">
+                        </div>
+                        <div class="food-content">
+                            <div class="d-flex justify-content-between">
+                                <h5>@item.product_name</h5>
+                                <span class="style-change">$@pPrice</span>
+                            </div>
+                            <p class="pt-3">Face together given moveth divided form Of Seasons that fruitful.</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+                
+    }
+</div>
+    
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

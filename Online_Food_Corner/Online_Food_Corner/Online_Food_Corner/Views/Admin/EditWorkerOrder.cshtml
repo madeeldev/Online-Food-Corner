@@ -1,0 +1,52 @@
+﻿@using Online_Food_Corner.Models
+@model Online_Food_Corner.Models.WorkerOrder
+
+@{
+    ViewBag.Title = "Edit Worker Order";
+    ViewBag.Main = "Worker";
+    Layout = "~/Views/Layout/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        @{
+            var db = new ApplicationDbContext();
+            var worker = db.Workers.ToList();
+            var order = db.Orders.ToList();
+        }
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.WorkerId, new SelectList(worker, "id", "id"), "Select Worker", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.WorkerId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.OrderId, new SelectList(order, "id", "id"), "Select Order", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.OrderId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-info" style="margin-left: 510px" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to Worker Order List", "WorkersOrder")
+</div>
+
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

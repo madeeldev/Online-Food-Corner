@@ -1,0 +1,82 @@
+﻿@model Online_Food_Corner.Models.ProductViewModel
+
+@{
+    ViewBag.Main = "Order";
+    ViewBag.Title = "Order Products";
+    Layout = "~/Views/Layout/_UserListLayout.cshtml";
+}
+
+@{  
+    ViewBag.CounterP = ViewBag.count;
+}
+
+@using (Html.BeginForm())
+{
+    <table>
+        @for (int i = 0; i < ViewBag.count; i++)
+        {
+            @Html.HiddenFor(model => model.Products[i].id)
+            <tr>
+                <td>
+                    @Html.HiddenFor(model => model.Products[i].product_name)
+                    <div style="margin-top: 100px; margin-left: 10px">
+                        @Html.DisplayFor(model => model.Products[i].product_name)
+                    </div>
+                </td>
+                <td>
+                    @Html.HiddenFor(model => model.Products[i].product_type)
+                    <div style="margin-top: 100px; margin-left: 100px">
+                        @Html.DisplayFor(model => model.Products[i].product_type)
+                    </div>
+                </td>
+                <td>
+                    @Html.HiddenFor(model => model.Products[i].product_Price)
+                    <div style="margin-top: 100px; margin-left: 100px">
+                        @{
+                            ViewBag.productPrice = Model.Products[i].product_Price / Model.Products[i].product_quantity;
+                        }
+                        $@ViewBag.productPrice
+                    </div>
+                </td>
+                <td>
+                    @Html.HiddenFor(model => model.Products[i].product_quantity)
+                    <div style="margin-top: 100px; margin-left: 100px">
+                        @Html.DisplayFor(model => model.Products[i].product_quantity)
+                    </div>
+                </td>
+                <td>
+                    @Html.HiddenFor(model => model.Products[i].product_picture)
+                    @{
+                        string imageBase64 = Convert.ToBase64String(Model.Products[i].product_picture);
+                        string imageSrc = string.Format("data:image/gif;base64,{0}", imageBase64);
+                    }
+                    <div class="col-md-4 col-sm-6" style="margin-left: 140px">
+                        <div class="single-food mt-5">
+                            <div class="food-img">
+                                <img src="@imageSrc" class="img-fluid" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div style="margin-top: 80px; margin-left: -150px">
+                        @Html.CheckBoxFor(model => model.Products[i].IsChecked, new { @class = "form-check-input" })
+                        <label class="form-check-label" for="@Model.Products[i].IsChecked">Check me out</label>
+                    </div>
+                </td>
+            </tr>
+            
+        }
+
+    </table>
+    
+    <div style="text-align: right; width: 100%; margin-top: 30px; margin-bottom: 20px; ">
+        <input type="submit" value="Proceed Order" class="btn btn-primary"/>
+    </div>
+
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

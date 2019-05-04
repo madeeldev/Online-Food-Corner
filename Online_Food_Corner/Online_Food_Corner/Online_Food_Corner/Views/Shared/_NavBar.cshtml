@@ -1,0 +1,28 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-lg-2">
+            <div class="logo-area" style="margin-top: 10px">
+                <a href="#"><img src="~/Content/assets/images/logo/favicon.png" alt="logo"></a>
+                <a href="#"><img src="~/Content/assets/images/logo/FoodCorner.png" alt="logo" style="width: 79%; margin-left:-2px"></a>
+            </div>
+        </div>
+        <div class="col-lg-10">
+            <div class="custom-navbar">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="main-menu">
+                <ul>
+                    <li class="active">@(Html.ActionLink("Home", "index", "Home"))
+                    <li>@(Html.ActionLink("About", "About", "Home"))</li>
+                    <li>@Html.ActionLink("Menu", "Menu", "Admin")</li>
+                    <li>@(Html.ActionLink("Contact", "Contact", "Home"))</li>
+                            
+                    <li>@Html.ActionLink("LOGIN", "Login", "Account")</li>
+                    <li>@Html.ActionLink("Register", "Register", "Account")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

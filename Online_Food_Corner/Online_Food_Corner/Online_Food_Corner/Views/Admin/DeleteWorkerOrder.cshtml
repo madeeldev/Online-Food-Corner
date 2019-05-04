@@ -1,0 +1,43 @@
+﻿@model Online_Food_Corner.Models.WorkerOrder
+
+@{
+    ViewBag.Title = "Delete Worker Order";
+    ViewBag.Main = "Workers Order";
+    Layout = "~/Views/Layout/_AdminLayout.cshtml";
+}
+
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkerId)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-info" /> |
+            @Html.ActionLink("Back to List", "WorkersOrder")
+        </div>
+    }
+</div>
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

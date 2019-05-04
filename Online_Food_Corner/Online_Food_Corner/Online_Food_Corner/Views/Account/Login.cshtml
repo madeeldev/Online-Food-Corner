@@ -1,0 +1,61 @@
+﻿@using Online_Food_Corner.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+    Layout = "~/Views/Layout/_LoginLayout.cshtml";
+    /*Layout = "~/views/shared/_Layout.cshtml";*/
+
+}
+
+
+<section id="loginForm">
+    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+        @Html.AntiForgeryToken()
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.TextBoxFor(m => m.Email, new { @placeholder = "Email", id = "Email", @class = "form-control form-control-user" })
+            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+
+        </div>
+        <div class="form-group">
+            @Html.PasswordFor(m => m.Password, new { @placeholder = "Password", id = "password", @class = "form-control form-control-user" })
+            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+
+        </div>
+        <div class="form-group">
+            <div class="custom-control custom-checkbox small">
+
+                @Html.CheckBoxFor(m => m.RememberMe, new { @class = "custom-control-input" })
+                @Html.LabelFor(m => m.RememberMe, new { @class = "custom-control-label" })
+
+            </div>
+        </div>
+        <input type="submit" value="Log in" class="btn btn-primary btn-user btn-block" />
+        <hr />
+
+        <a href="@Url.Action("Login", "Account")" class="btn btn-google btn-user btn-block">
+            <i class="fab fa-google fa-fw"></i> Login with Google
+        </a>
+        <a href="@Url.Action("Login", "Account")" class="btn btn-facebook btn-user btn-block">
+            <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
+        </a>
+        <hr>
+        <div class="text-center">
+            <a class="small" href="@Url.Action("ForgotPassword", "Account")">Forgot Password?</a>
+        </div>
+        <div class="text-center">
+            <a class="small" href="@Url.Action("Register", "Account")">Register As a new user!</a>
+        </div>
+
+    }
+</section>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

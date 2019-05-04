@@ -1,0 +1,55 @@
+﻿@using Online_Food_Corner.Models
+@model IEnumerable<Online_Food_Corner.Models.WorkerOrder>
+
+@{
+    ViewBag.Main = "Employee";
+    ViewBag.Title = "Employee Order";
+    Layout = "~/Views/Layout/_EmployeeLayout.cshtml";
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderId)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Order.Status)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        var db = new ApplicationDbContext();
+        var order = db.Orders.SingleOrDefault(x => x.id == item.OrderId);
+        ViewBag.orderStatus = order.Status;
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderId)
+            </td>
+
+            
+            <td>
+                @ViewBag.orderStatus
+            </td>
+            <td>
+                @Html.ActionLink("Send Reply", "SendReply", new {id = item.Id})
+            </td>
+
+        </tr>
+    }
+
+</table>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

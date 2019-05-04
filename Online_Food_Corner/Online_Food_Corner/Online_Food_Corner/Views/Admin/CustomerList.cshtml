@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Online_Food_Corner.Models.Customer>
+
+@{
+    ViewBag.Title = "Customer List";
+    ViewBag.Main = "Customer";
+    Layout = "~/Views/Layout/_AdminListLayout.cshtml";
+}
+
+
+@{
+    if (ViewBag.count == 0)
+    {
+        <p>No Customer is Registered yet.</p>
+    }
+    else
+    {
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.customer_name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.customer_address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.cell_no)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.customer_email)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model) {
+                <tr>
+                    
+                    <td>
+                        @Html.DisplayFor(modelItem => item.customer_name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.customer_address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.cell_no)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.customer_email)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+                        @Html.ActionLink("Details", "Details", new { id=item.id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id=item.id })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    }
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

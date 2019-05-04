@@ -1,0 +1,66 @@
+﻿@model Online_Food_Corner.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Layout/_RegisterLayout.cshtml";
+}
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+
+            @Html.TextBoxFor(m => m.UserName, new {@placeholder = "UserName", id = "UserName", @class = "form-control form-control-user"})
+            @Html.ValidationMessageFor(m => m.UserName, "", new {@class = "text-danger"})
+        </div>
+        <div class="col-sm-6 mb-3">
+            @Html.TextBoxFor(m => m.FullName, new {@placeholder = "Full Name", id = "FullName", @class = "form-control form-control-user"})
+            @Html.ValidationMessageFor(m => m.FullName, "", new {@class = "text-danger"})
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.TextBoxFor(m => m.Email, new { @placeholder = "Email", id = "email", @class = "form-control form-control-user" })
+        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            @Html.TextBoxFor(m => m.Address, new { @placeholder = "Address", id = "Address", @class = "form-control form-control-user" })
+            @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-sm-6 mb-3">
+            @Html.TextBoxFor(m => m.CellNumber, new { @placeholder = "Phone Number", id = "Phone Number", @class = "form-control form-control-user" })
+            @Html.ValidationMessageFor(m => m.CellNumber, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            @Html.PasswordFor(m => m.Password, new { @placeholder = "Password", id = "password", @class = "form-control form-control-user" })
+            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-sm-6 mb-3">
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @placeholder = "Confirm Password", id = "confirmPassword", @class = "form-control form-control-user" })
+            @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <input type="submit" class="btn btn-primary btn-user btn-block" value="Register" />
+    <hr/>
+    
+    <a href="@Url.Action("Register", "Account")" class="btn btn-google btn-user btn-block">
+        <i class="fab fa-google fa-fw"></i> Register with Google
+    </a>
+    <a href="@Url.Action("Register", "Account")" class="btn btn-facebook btn-user btn-block">
+        <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
+    </a>
+    <hr/>
+    <div class="text-center">
+        <a class="small" href="@Url.Action("ForgotPassword", "Account")">Forgot Password?</a>
+    </div>
+    <div class="text-center">
+        <a class="small" href="@Url.Action("Login", "Account")">Already have an account? Login!</a>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

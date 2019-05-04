@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Online_Food_Corner.Models.Product>
+
+@{
+    ViewBag.Title = "Product List";
+    ViewBag.Main = "Product";
+    Layout = "~/Views/Layout/_AdminListLayout.cshtml";
+}
+<p>
+    @Html.ActionLink("Create New", "AddProduct")
+</p>
+<table class="table">
+    
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <div style="margin-top: 100px; margin-left: 10px">
+                @Html.DisplayFor(modelItem => item.product_name)
+            </div>
+        </td>
+        <td>
+            <div style="margin-top: 100px; margin-left: 30px">
+                @Html.DisplayFor(modelItem => item.product_type)
+            </div>
+        </td>
+        <td>
+            <div style="margin-top: 100px; margin-left: 30px">
+                @{
+                    var a = (item.product_Price) / (item.product_quantity);
+                }
+                $@Html.DisplayFor(modelItem => a)
+            </div>
+        </td>
+        <td>
+            @{
+                string imageBase64 = Convert.ToBase64String(item.product_picture);
+                string imageSrc = string.Format("data:image/gif;base64,{0}", imageBase64);
+            }
+            <div class="col-md-4 col-sm-6" style="margin-left: 50px">
+                <div class="single-food mt-5">
+                    <div class="food-img">
+                        <img src="@imageSrc" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+        </td>
+        
+        <td>
+            <div class="row" style="margin-left: -300px;margin-top: 100px ">
+                <div class="col-md-2" style="margin-right: 1px">@Html.ActionLink("Edit", "EditProduct", new { id=item.id })</div> |
+                <div class="col-md-3" style="margin-right: 1px">@Html.ActionLink("Details", "ProductDetails", new { id=item.id })</div> |
+                <div class="col-md-3" style="margin-right: 1px">@Html.ActionLink("Delete", "ProductDelete", new { id=item.id })</div> |
+                <div class="col-md-3" style="margin-right: !px">@Html.ActionLink("Order Product", "MakeOrder", new { id=item.id })</div>
+            </div>
+        </td>
+    </tr>
+}
+</table>
+<div>
+    <hr/>
+</div>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,46 @@
+﻿@model Online_Food_Corner.Models.ApplicationUser
+
+@{
+    ViewBag.Title = "User Profile";
+    ViewBag.Main = "User";
+    Layout = "~/Views/Layout/_UserLayout.cshtml";
+}
+
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.firstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.firstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cellNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cellNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+    </dl>
+</div>
