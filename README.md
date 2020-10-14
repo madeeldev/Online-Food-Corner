@@ -1,1 +1,1 @@
-Web application for online food ordering. User can view available products, add them into his cart and make an order of those products as well.
+Web application for food ordering. Users can view available products, add them to their carts, and make an order of those products as well.
